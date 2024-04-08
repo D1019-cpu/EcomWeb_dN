@@ -1,5 +1,10 @@
 "# EcomWeb_dN" 
 
-fe_tem: Web Template
-docs: Final Report and docs of project (database file, wireframe, use case, ...)
-MvcEcom: contains the entire source code of the project
+<ul>
+    <li>fe_tem: Web Template</li>
+    <li>docs: Final Report and docs of project (database file, wireframe, use case, ...)</li>
+    <li>MvcEcom: contains the entire source code of the project</li>
+</ul>
+
+
+
