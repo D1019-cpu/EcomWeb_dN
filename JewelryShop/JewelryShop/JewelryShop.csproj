@@ -177,6 +177,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CommonAbstract.cs" />
+    <Compile Include="Models\EF\Category.cs" />
+    <Compile Include="Models\EF\Order.cs" />
+    <Compile Include="Models\EF\OrderDetail.cs" />
+    <Compile Include="Models\EF\Product.cs" />
+    <Compile Include="Models\EF\ProductImage.cs" />
+    <Compile Include="Models\EF\ProductReview.cs" />
+    <Compile Include="Models\EF\Promotion.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
