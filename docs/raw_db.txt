@@ -1,0 +1,101 @@
+Category:
+Id: int 
+Name: nvarchar(255)
+Description: nvarchar(max)
+Image: nvarchar(max)
+Created_At: DateTime  
+Created_By: nvarchar(255)
+Updated_At: DateTime 
+Updated_By: nvarchar(255)
+
+Product: ? Product and Promotion: Many to Many 
+Id: int 
+CategoryId: int 
+PromotionId: int 
+Name: nvarchar(255)
+Image: nvarchar(max)
+Description: nvarchar(max)
+Price: decimal(18,2)
+PriceSale: decimal(18,2)
+Type: nvarchar(255)
+Product_Status: ENUM("Draft", "Disabled", "Rejected", "In Review", "Published")
+Featured: bit
+Created_At: DateTime  
+Created_By: nvarchar(255)
+Updated_At: DateTime 
+Updated_By: nvarchar(255)
+
+
+ProductImage:
+Id: int 
+Image: nvarchar(max)
+ProductId: int 
+Created_At: DateTime  
+Created_By: nvarchar(255)
+Updated_At: DateTime 
+Updated_By: nvarchar(255)
+
+Order:
+Id: int 
+UserId: int 
+OrderDate: datetime
+TotalAmount: decimal(18,2)
+Status: bit 
+OrderStatus: ? ENUM("Đang chờ xử lý", "Đã tiếp nhận", "Đang giao", "Hoàn thành", "Đã hủy")
+
+OrderDetail:
+Id: int 
+ProductId: int 
+Quantity: int 
+Price: decimal(18,2)
+
+
+ProductReview:
+Id: int 
+UserId: int 
+ProductId: int 
+Review: nvarchar(max)
+Rating: int 
+Created_At:
+Updated_At:
+Created_By:
+Updated_By
+
+
+Address:
+UserId 
+Phone 
+Address
+Status: Verify or Not 
+
+
+Profile:
+UserId 
+Image:
+FullName 
+Bio 
+Phone 
+Verified
+
+
+ContactUs:
+full_name:
+email: 
+phone: 
+subject:
+message: 
+
+Promotion: Khuyến mãi, discount mà user săn
+Id: int 
+PromotionName: nvarchar(255) ex: giảm 50k 
+DiscountPercentage: decimal(18, 2)
+StartDate
+EndDate 
+
+Chat:
+Id:
+SenderId: int 
+ReceiverId: int 
+Message: nvarchar(max)
+SendDate: datetime 
+IsRead: bit 
