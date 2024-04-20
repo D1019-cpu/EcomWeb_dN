@@ -16,6 +16,7 @@ namespace JewelryShop.Models.EF
         [Required]
         public string Image { get; set;}
         public int ProductId { get; set;}
+        public virtual Product Product { get; set;}
 
     }
 }

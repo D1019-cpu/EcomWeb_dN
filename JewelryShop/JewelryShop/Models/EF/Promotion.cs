@@ -10,6 +10,10 @@ namespace JewelryShop.Models.EF
     [Table("tb_Promotion")]
     public class Promotion : CommonAbstract 
     {
+        public Promotion() 
+        { 
+            this.Products = new HashSet<Product>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -22,5 +26,6 @@ namespace JewelryShop.Models.EF
         public DateTime StartDate { get; set; }
         [Required]
         public DateTime EndDate { get; set; }
+        public ICollection<Product> Products { get; set;}
     }
 }

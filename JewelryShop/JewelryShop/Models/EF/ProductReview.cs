@@ -18,5 +18,6 @@ namespace JewelryShop.Models.EF
         public string Review { get; set; }
         [Required]
         public int Rating { get; set;}
+        public virtual Product Product { get; set; }
     }
 }

@@ -10,12 +10,17 @@ namespace JewelryShop.Models.EF
     [Table("tb_Product")]
     public class Product : CommonAbstract 
     {
+        public Product() 
+        {
+            this.ProductImages = new HashSet<ProductImage>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [StringLength(255, ErrorMessage = "Tên sản phẩm không được quá 255 ký tự!")]
         public string Name { get; set; }
+        public string Slug { get; set; }
         [Required]
         public string Description { get; set; }
         public int CategoryId { get; set; }
@@ -33,5 +38,10 @@ namespace JewelryShop.Models.EF
         [StringLength(50, ErrorMessage = "Trạng thái sản phẩm gồm: ")]
         public string ProductStatus { get; set; }
         public bool IsFeatured { get; set; }
+
+        public virtual Category Category { get; set; }
+        public virtual Promotion Promotion { get; set; }
+        public ICollection<ProductImage> ProductImages { get; set; }
+        public ICollection<ProductReview> ProductReviews { get; set; }
     }
 }

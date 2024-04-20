@@ -106,3 +106,5 @@ D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\Jew
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.csproj.CopyComplete
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.dll
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.pdb
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.InitialCreate.resources
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.csproj.GenerateResource.cache
