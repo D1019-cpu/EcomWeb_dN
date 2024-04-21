@@ -20,10 +20,10 @@ namespace JewelryShop.Models.EF
         [Required]
         [StringLength(255, ErrorMessage = "Tên không được phép quá 255 ký tự!")]
         public string Name { get; set; }
+        
         public string Slug { get; set; }
-        [Required]
+        
         public string Description { get; set; }
-        [Required]
         public string Image { get; set; }
 
         public ICollection<Product> Products { get; set;}

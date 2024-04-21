@@ -108,3 +108,6 @@ D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\Jew
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.pdb
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.InitialCreate.resources
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.csproj.GenerateResource.cache
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.ModifierDataType.resources
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.UpdateCategory.resources
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.ModifiedSlugInCategory.resources

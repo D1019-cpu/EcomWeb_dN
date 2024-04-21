@@ -181,6 +181,18 @@
     <Compile Include="Migrations\202404201506049_InitialCreate.designer.cs">
       <DependentUpon>202404201506049_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404210250299_ModifierDataType.cs" />
+    <Compile Include="Migrations\202404210250299_ModifierDataType.designer.cs">
+      <DependentUpon>202404210250299_ModifierDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404210325528_UpdateCategory.cs" />
+    <Compile Include="Migrations\202404210325528_UpdateCategory.designer.cs">
+      <DependentUpon>202404210325528_UpdateCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404210333597_ModifiedSlugInCategory.cs" />
+    <Compile Include="Migrations\202404210333597_ModifiedSlugInCategory.designer.cs">
+      <DependentUpon>202404210333597_ModifiedSlugInCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -214,6 +226,8 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_PartialSidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -282,6 +296,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202404201506049_InitialCreate.resx">
       <DependentUpon>202404201506049_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404210250299_ModifierDataType.resx">
+      <DependentUpon>202404210250299_ModifierDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404210325528_UpdateCategory.resx">
+      <DependentUpon>202404210325528_UpdateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404210333597_ModifiedSlugInCategory.resx">
+      <DependentUpon>202404210333597_ModifiedSlugInCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
