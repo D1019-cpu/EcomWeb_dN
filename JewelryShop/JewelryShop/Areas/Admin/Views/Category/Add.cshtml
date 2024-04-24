@@ -54,33 +54,53 @@
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
-                <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Tên danh mục</label>
-                        @Html.TextBoxFor(x => x.Name, new {@class="form-control", @placeholder="Tên danh mục"})
-                        @Html.ValidationMessageFor(x => x.Name, null, new {@class="text-danger"})
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mô tả</label>
-                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @style="resize: none;" })
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Image</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                @Html.TextBoxFor(x => x.Image, new {@class= "custom-file-input", @id= "exampleInputFile", @type="file" })
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
-                            </div>
+            <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tên danh mục</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Tên danh mục" })
+                    @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mô tả</label>
+                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @style = "resize: none;" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Image</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            @Html.TextBoxFor(x => x.Image, new { @class = "custom-file-input", @id = "exampleInputFile", @type = "file" })
+                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <a href="/admin/category" class="btn btn-dark">Hủy</a>
-                        <button type="submit" class="btn btn-primary">Thêm mới</button>
-                    </div>
                 </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">SEO Title</label>
+                    @Html.TextBoxFor(x => x.SeoTitle, new { @class = "form-control", @placeholder = "SEO Title" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">SEO Description</label>
+                    @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control", @style = "resize: none;" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">SEO Keywords</label>
+                    @Html.TextBoxFor(x => x.SeoKeywords, new { @class = "form-control", @placeholder = "SEO Keywords" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Hiển thị</label>
+                    @Html.CheckBoxFor(x => x.IsActive, new { @checked="checked" })
+                </div>
+
+                <div class="form-group">
+                    <a href="/admin/category" class="btn btn-dark">Hủy</a>
+                    <button type="submit" class="btn btn-primary">Thêm mới</button>
+                </div>
+            </div>
             }
             
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,15 +7,26 @@ using System.Web.Mvc;
 using JewelryShop.Models;
 using JewelryShop.Models.EF;
 
+
 namespace JewelryShop.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/Category
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var items = db.Categories;
+            var pageSize = 5;
+            if (page == null)
+            {
+                page = 1;
+            }
+            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var items = db.Categories.OrderByDescending(x => x.UpdatedAt).ToPagedList(pageIndex, pageSize);
+            //items = items.ToPagedList(pageIndex, pageSize);
+            
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = page;
             return View(items);
         }
 
@@ -30,7 +42,7 @@ namespace JewelryShop.Areas.Admin.Controllers
         public ActionResult Add (Category model)
         {
             if (ModelState.IsValid)
-            {
+            {   
                 model.CreatedAt= DateTime.Now;
                 model.UpdatedAt = DateTime.Now;
                 model.Slug = JewelryShop.Models.Reused.Filter.FilterChar(model.Name);
@@ -60,10 +72,15 @@ namespace JewelryShop.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Categories.Attach(model);
-                model.UpdatedAt= DateTime.Now;
+                model.UpdatedAt = DateTime.Now;
                 model.Slug = JewelryShop.Models.Reused.Filter.FilterChar(model.Name);
                 db.Entry(model).Property(x => x.Name).IsModified = true;
+                db.Entry(model).Property(x => x.Description).IsModified = true;
                 db.Entry(model).Property(x => x.Slug).IsModified = true;
+                db.Entry(model).Property(x => x.SeoTitle).IsModified = true;
+                db.Entry(model).Property(x => x.SeoDescription).IsModified = true;
+                db.Entry(model).Property(x => x.SeoKeywords).IsModified = true;
+                db.Entry(model).Property(x => x.IsActive).IsModified = true;
                 db.Entry(model).Property(x => x.UpdatedAt).IsModified = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -84,5 +101,21 @@ namespace JewelryShop.Areas.Admin.Controllers
             }
             return Json(new { success = false });
         }
+
+        [HttpPost]
+        public ActionResult IsActive (int id)
+        {
+            var item = db.Categories.Find(id);
+            if (item != null)
+            {
+                item.IsActive = !item.IsActive;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, isActive = item.IsActive });
+            }
+            return Json(new { success = false });
+        }
+        
+
     }
 }

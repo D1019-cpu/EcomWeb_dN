@@ -25,6 +25,10 @@ namespace JewelryShop.Models.EF
         
         public string Description { get; set; }
         public string Image { get; set; }
+        public string SeoTitle { get; set; }
+        public string SeoDescription { get; set; }
+        public string SeoKeywords { get; set; }
+        public bool IsActive { get; set; }
 
         public ICollection<Product> Products { get; set;}
     }

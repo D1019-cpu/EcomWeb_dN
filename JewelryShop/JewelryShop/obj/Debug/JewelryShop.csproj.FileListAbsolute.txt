@@ -111,3 +111,8 @@ D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\Jew
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.ModifierDataType.resources
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.UpdateCategory.resources
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.ModifiedSlugInCategory.resources
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.dll
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.Mvc.dll
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.xml
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.Mvc.xml
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.AddSeo.resources

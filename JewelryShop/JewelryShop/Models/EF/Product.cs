@@ -23,9 +23,10 @@ namespace JewelryShop.Models.EF
         public string Slug { get; set; }
         [Required]
         public string Description { get; set; }
+        public string SKU { get; set; }
+        public int Quantity { get; set; }
         public int CategoryId { get; set; }
         public int PromotionId { get; set; }
-        [Required]
         public string Image { get; set; }
         [Required]
         public decimal Price { get; set; }
@@ -38,6 +39,10 @@ namespace JewelryShop.Models.EF
         [StringLength(50, ErrorMessage = "Trạng thái sản phẩm gồm: ")]
         public string ProductStatus { get; set; }
         public bool IsFeatured { get; set; }
+        public bool IsPublished { get; set; }
+        public string SeoTitle { get; set; }
+        public string SeoDescription { get; set; }
+        public string SeoKeywords { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual Promotion Promotion { get; set; }
