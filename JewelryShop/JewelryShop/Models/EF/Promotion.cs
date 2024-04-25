@@ -26,6 +26,7 @@ namespace JewelryShop.Models.EF
         public DateTime StartDate { get; set; }
         [Required]
         public DateTime EndDate { get; set; }
+        public bool  IsActive { get; set; }
         public ICollection<Product> Products { get; set;}
     }
 }

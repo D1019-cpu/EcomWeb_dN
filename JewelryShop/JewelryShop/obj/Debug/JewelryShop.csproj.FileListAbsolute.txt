@@ -116,3 +116,4 @@ D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.xml
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\bin\PagedList.Mvc.xml
 D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.AddSeo.resources
+D:\Research\ASPdotNET\ASP.NET_Core\ecomprj\JewelryShop\JewelryShop\obj\Debug\JewelryShop.Migrations.UpdatePromotionIsActive.resources

@@ -177,6 +177,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PromotionController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -202,6 +204,10 @@
     <Compile Include="Migrations\202404241514431_AddSeo.cs" />
     <Compile Include="Migrations\202404241514431_AddSeo.designer.cs">
       <DependentUpon>202404241514431_AddSeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404250545228_UpdatePromotionIsActive.cs" />
+    <Compile Include="Migrations\202404250545228_UpdatePromotionIsActive.designer.cs">
+      <DependentUpon>202404250545228_UpdatePromotionIsActive.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -239,6 +245,12 @@
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -319,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404241514431_AddSeo.resx">
       <DependentUpon>202404241514431_AddSeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404250545228_UpdatePromotionIsActive.resx">
+      <DependentUpon>202404250545228_UpdatePromotionIsActive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

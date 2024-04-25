@@ -1,19 +1,19 @@
-﻿using PagedList;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using JewelryShop.Models;
 using JewelryShop.Models.EF;
-
+using PagedList;
+using System.Web.UI;
+using JewelryShop.Models;
 
 namespace JewelryShop.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class PromotionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Admin/Category
+        // GET: Admin/Promotion
         public ActionResult Index(string SearchText, int? page)
         {
             var pageSize = 5; // items per page
@@ -21,11 +21,11 @@ namespace JewelryShop.Areas.Admin.Controllers
             {
                 page = 1;
             }
-            IEnumerable<Category> items = db.Categories.OrderByDescending(x => x.UpdatedAt);
+            IEnumerable<Promotion> items = db.Promotions.OrderByDescending(x => x.UpdatedAt);
             if (!String.IsNullOrEmpty(SearchText))
             {
-                items = items.Where(x => x.Slug.Contains(SearchText) || x.Name.Contains(SearchText));
-            }    
+                items = items.Where(x => x.PromotionName.Contains(SearchText));
+            }
             var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
             items = items.ToPagedList(pageIndex, pageSize);
             ViewBag.PageSize = pageSize;
@@ -33,72 +33,66 @@ namespace JewelryShop.Areas.Admin.Controllers
             return View(items);
         }
 
-        // GET: /Admin/Category/Add
-        public ActionResult Add ()
+        // GET: /Admin/Promotion/Add
+        public ActionResult Add()
         {
             return View();
         }
 
-        // POST: /Admin/Category/Add
+        // POST: /Admin/Promotion/Add
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add (Category model)
+        public ActionResult Add(Promotion model)
         {
             if (ModelState.IsValid)
-            {   
-                model.CreatedAt= DateTime.Now;
+            {
+                model.CreatedAt = DateTime.Now;
                 model.UpdatedAt = DateTime.Now;
-                model.Slug = JewelryShop.Models.Reused.Filter.FilterChar(model.Name);
-                db.Categories.Add(model);
+                db.Promotions.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            } 
+            }
             return View(model);
         }
 
-        // GET: /Admin/Category/Edit/5/
+        // GET: /Admin/Promotion/Edit/5/
         public ActionResult Edit(int id)
         {
-            var item = db.Categories.Find(id);
+            var item = db.Promotions.Find(id);
             if (item == null)
             {
                 return RedirectToAction("Index");
-            }    
+            }
             return View(item);
         }
 
-        // POST: /Admin/Category/Edit/5/
+        // POST: /Admin/Promotion/Edit/5/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Category model)
+        public ActionResult Edit(Promotion model)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Attach(model);
+                db.Promotions.Attach(model);
                 model.UpdatedAt = DateTime.Now;
-                model.Slug = JewelryShop.Models.Reused.Filter.FilterChar(model.Name);
-                db.Entry(model).Property(x => x.Name).IsModified = true;
-                db.Entry(model).Property(x => x.Description).IsModified = true;
-                db.Entry(model).Property(x => x.Slug).IsModified = true;
-                db.Entry(model).Property(x => x.SeoTitle).IsModified = true;
-                db.Entry(model).Property(x => x.SeoDescription).IsModified = true;
-                db.Entry(model).Property(x => x.SeoKeywords).IsModified = true;
+                db.Entry(model).Property(x => x.PromotionName).IsModified = true;
+                db.Entry(model).Property(x => x.DiscountPercentage).IsModified = true;
                 db.Entry(model).Property(x => x.IsActive).IsModified = true;
                 db.Entry(model).Property(x => x.UpdatedAt).IsModified = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(model) ;
+            return View(model);
         }
 
-        // POST: /Admin/Category/Delete/5
+        // POST: /Admin/Promotion/Delete/5
         [HttpPost]
-        public ActionResult Delete (int id)
+        public ActionResult Delete(int id)
         {
-            var item = db.Categories.Find(id);
+            var item = db.Promotions.Find(id);
             if (item != null)
             {
-                db.Categories.Remove(item);
+                db.Promotions.Remove(item);
                 db.SaveChanges();
                 return Json(new { success = true });
             }
@@ -106,9 +100,9 @@ namespace JewelryShop.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult IsActive (int id)
+        public ActionResult IsActive(int id)
         {
-            var item = db.Categories.Find(id);
+            var item = db.Promotions.Find(id);
             if (item != null)
             {
                 item.IsActive = !item.IsActive;
@@ -127,10 +121,10 @@ namespace JewelryShop.Areas.Admin.Controllers
                 var items = ids.Split(',');
                 if (items != null && items.Any())
                 {
-                    foreach(var item in items)
+                    foreach (var item in items)
                     {
-                        var obj = db.Categories.Find(Convert.ToInt32(item));
-                        db.Categories.Remove(obj);
+                        var obj = db.Promotions.Find(Convert.ToInt32(item));
+                        db.Promotions.Remove(obj);
                         db.SaveChanges();
                     }
                 }
